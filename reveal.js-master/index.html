@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Exposición Unidad 3</title>
+
+		<link rel="stylesheet" href="/reveal.js-master/dist/reset.css">
+		<link rel="stylesheet" href="/reveal.js-master/dist/reveal.css">
+		<link rel="stylesheet" href="/reveal.js-master/dist/theme/black.css">
+
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<img src="/reveal.js-master/Assests/LogoUPT.png" alt="" style="width: 500px; height: 200px;">
+					<h1 style="font-size: larger; color: blueviolet;">Exposición Consultas Multitabla y Subconsultas</h1>
+					<h2>Ingeniería en Sistemas</h2>
+				</section>
+				
+				<section style="background-color: rgb(24, 81, 81); width: max-content; height: max-content;">
+					<img src="Assests/LogoUPT.png" alt="" style="width: 200pt; margin-top: 100pt; padding-right: 800pt;">
+					<h1 style="font-size: 50pt;">Consultas Multitabla</h1>
+					<p>* Composiciones internas</p>
+					<p>* Composiciones externas</p>
+				</section>
+
+				<section>
+					<h1 style="font-size: 60pt;">Introducción</h1>
+					<p style="font-size: 30pt;">
+						Las <strong style="color: aqua;">consultas multitabla</strong>  en MySQL son una herramienta poderosa que te permite acceder y combinar datos de dos o más tablas en una sola consulta. Esto te da la flexibilidad de obtener información completa y compleja de tu base de datos, en lugar de limitarte a una sola tabla.
+					</p>
+				</section>
+<!--Composiciones internas-->
+				<section>
+					<h1 style="font-size: 60pt; color: aqua;">Composiciones internas</h1>
+					<p style="font-size: 30pt;">Las Composiciones internas son aquellas que parten de un producto cartesiano entre
+						dos tablas, es decir, la combinación de todas las filas de una tabla con las filas de la otra
+						tabla. A partir de ese producto cartesiano de tablas, se pueden hacer filtros o restricciones
+						al resultado.</p>
+				</section>
+<!--Composiciones internas-->
+				<section>
+					<h1 style="font-size: 60pt; color: aqua;">Composiciones externas</h1>
+					<p style="font-size: 30pt;">Las Composiciones externas no se originan de un producto cartesiano sino que se
+						toma un registro de una tabla y se busca registros de otra tabla que coincidan en el atributo
+						indicado.</p>
+				</section>
+
+				<section>
+					<h1 style="font-size: 50pt;">Relaciones Persistentes</h1>
+					<li>Relación Uno a Uno (1:1)</li>
+					<li>Relación Uno a Muchos (1:N)</li>
+					<li>Relación Muchos a Muchos (N:N)</li>
+					<li>Relación Reflexiva</li>
+					<li>Relación Asociativa</li>
+				</section>
+<!--Relación 1:1-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Persistentes</h1>
+					<h2 style="font-size: 25pt;">Relación Uno a Uno</h2>
+					<li style="font-size: 20pt;">Definición: Una entidad en una tabla se relaciona con una única entidad en otra tabla.</li>
+					<li style="font-size: 20pt;">Ejemplo: Un cliente tiene una única cuenta de usuario.</li>
+					<li style="font-size: 20pt;">Importancia: Permite un almacenamiento eficiente de datos relacionados sin redundancia.</li>
+					<img src="Assests/Relación1a1Persistente.png" alt="">
+				</section>
+<!--Relación 1:N-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Persistentes</h1>
+					<h2 style="font-size: 25pt;">Relación Uno a Muchos</h2>
+					<li style="font-size: 20pt;">Definición: Una entidad en una tabla se relaciona con múltiples entidades en otra tabla.</li>
+					<li style="font-size: 20pt;">Ejemplo: Un cliente tiene múltiples pedidos.</li>
+					<li style="font-size: 20pt;">Importancia: Permite organizar datos jerárquicamente y facilita la agregación de datos. Además, permite modelar relaciones de tipo "categoría" y facilita la búsqueda y el filtrado de datos.</li>
+					<img src="Assests/Relación1aNPersistente.png" alt="">
+				</section>
+<!--Relación N:M-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Persistentes</h1>
+					<h2 style="font-size: 25pt;">Relación Muchos a Muchos</h2>
+					<li style="font-size: 20pt;">Definición: Múltiples entidades en una tabla se relacionan con múltiples entidades en otra tabla.</li>
+					<li style="font-size: 20pt;">Ejemplo: Múltiples estudiantes asisten a múltiples clases.</li>
+					<li style="font-size: 20pt;">Importancia: Permite modelar relaciones complejas entre entidades y facilita la gestión de datos interconectados.</li>
+					<img src="Assests/RelaciónNaNPersistente.gif" alt="">
+				</section>
+<!--Relación Reflexiva-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Persistentes</h1>
+					<h2 style="font-size: 25pt;">Relación Reflexiva</h2>
+					<li style="font-size: 20pt;">Definición: Una entidad se relaciona consigo misma.</li>
+					<li style="font-size: 20pt;">Ejemplo: Un empleado tiene un supervisor que también es un empleado.</li>
+					<li style="font-size: 20pt;">Importancia: Permite modelar jerarquías y relaciones cíclicas.</li>
+					<img src="Assests/RelaciónReflexiva.png" alt="">
+				</section>
+<!--Relación Asociativa-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Persistentes</h1>
+					<h2 style="font-size: 25pt;">Relación Asociativa</h2>
+					<li style="font-size: 20pt;">Definición: Una entidad adicional se utiliza para conectar dos o más entidades principales.</li>
+					<li style="font-size: 20pt;">Ejemplo: La entidad "Escribir" conecta la entidad "Libro" con la entidad "Autor".</li>
+					<li style="font-size: 20pt;">Importancia: Permite modelar relaciones complejas que no se pueden representar con relaciones simples.</li>
+					<img src="Assests/RelaciónAsociativa.gif" alt="" style="background-color: white; width: 400pt;">
+				</section>
+<!--Relaciones Persistentes-->
+				<section>
+					<h1 style="font-size: 50pt;">Relaciones Temporales</h1>
+					<p style="font-size: 20pt;">Las relaciones temporales en las bases de datos son aquellas que existen solo durante un período de tiempo limitado y desaparecen una vez que se cumple su propósito. No modifican el estado del sistema de forma permanente. Estas relaciones capturan información sobre entidades y sus conexiones durante un intervalo específico, permitiendo un análisis y seguimiento de cambios a lo largo del tiempo.</p>
+					<li style="font-size: 20pt;">Duración: Temporales.</li>
+					<li style="font-size: 20pt;">Impacto en el estado del sistema: No modifican el estado del sistema.</li>
+					<li style="font-size: 20pt;">Uso: Modelar entidades y relaciones que son temporales.</li>
+				</section>
+
+				<section>
+					<h1 style="font-size: 50pt;">Relaciones Temporales</h1>
+					<li>Temporalmente Simple</li>
+					<li>Válida Temporal</li>
+					<li>Histórica Temporal</li>
+				</section>
+<!--Relación Temporalmente Simple-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Temporales</h1>
+					<h2 style="font-size: 25pt;">Relación Temporalmente Simple</h2>
+					<li style="font-size: 20pt;">Definición: Una relación que existe durante un período de tiempo específico.</li>
+					<li style="font-size: 20pt;">Ejemplo: La relación entre un estudiante y un curso durante un semestre.</li>
+					<li style="font-size: 20pt;">Importancia: Permite modelar eventos y actividades que tienen una duración limitada.</li>
+					<img src="Assests/RelaciónTemporalSimple.png" alt="" style="background-color: white; width: 400pt;">
+				</section>
+<!--Relación Válida Temporal-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Temporales</h1>
+					<h2 style="font-size: 25pt;">Relación Válida Temporal</h2>
+					<li style="font-size: 20pt;">Definición: Una relación que es válida dentro de un período de tiempo específico.</li>
+					<li style="font-size: 20pt;">Ejemplo: La relación entre un empleado y su cargo durante un período de empleo.</li>
+					<li style="font-size: 20pt;">Importancia: Permite modelar cambios en las relaciones a lo largo del tiempo.</li>
+					<img src="Assests/RelaciónVálidaTemporal.webp" alt="" style="background-color: white; width: 400pt;">
+				</section>
+<!--Relación Histórica Temporal-->
+				<section>
+					<h1 style="font-size: 30pt;">Relaciones Temporales</h1>
+					<h2 style="font-size: 25pt;">Relación Histórica Temporal</h2>
+					<li style="font-size: 20pt;">Definición: Una relación que registra el historial de cambios en una entidad a lo largo del tiempo.</li>
+					<li style="font-size: 20pt;">Ejemplo: El historial de cambios en la dirección de un cliente.</li>
+					<li style="font-size: 20pt;">Importancia: Permite realizar un seguimiento del historial de cambios y analizar datos que varían a lo largo del tiempo.</li>
+					<img src="Assests/RelaciónHistóricaTemporal.webp" alt="" style="background-color: white; width: 400pt;">
+				</section>
+
+			</div>
+		</div>
+
+		<script src="/reveal.js-master/dist/reveal.js"></script>
+		<script src="/reveal.js-master/plugin/notes/notes.js"></script>
+		<script src="/reveal.js-master/plugin/markdown/markdown.js"></script>
+		<script src="/reveal.js-master/plugin/highlight/highlight.js"></script>
+		<script>
+
+			Reveal.initialize({
+				hash: true,
+
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
