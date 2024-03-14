@@ -43,48 +43,74 @@
 						tabla. A partir de ese producto cartesiano de tablas, se pueden hacer filtros o restricciones
 						al resultado.</p>
 				</section>
-					<h1>SELECT … FROM tabla1 JOIN tabla2 ;</h1>
-					<p>Para realizar el producto cartesiano de 2 tablas usamos el comando JOIN que puede ser
+					
+				<section>
+					<h1 style="font-size: 30pt;">SELECT … FROM tabla1 JOIN tabla2 ;</h1>
+					<p style="font-size: 20pt;">Para realizar el producto cartesiano de 2 tablas usamos el comando JOIN que puede ser
 						sustituido en MySQL por la coma(,)</p>
-					<img src="/Assests/ConsultasI1.PNG" alt="">
-				<section>
-
+					<img src="/Assests/ConsultasI1.PNG" alt="" style="width: 400pt;">
 				</section>
-				
+					
 				<section>
-
+					<h1 style="font-size: 30pt;">SELECT … FROM tabla1 JOIN tabla2 ON (tabla1.atributo = tabla2.atributo) ;</h1>
+					<h1 style="font-size: 30pt;">… FROM tabla1 , tabla2 ON (tabla1.atributo = tabla2.atributo) ;</h1>
+					<p style="font-size: 20pt;">Imaginemos que solo deseamos mostrar las filas donde el “id” de jugador coincida con el
+						“id” de goles, para ello deberíamos usar la restricción ON, la cual funciona muy similar a
+						la restricción WHERE ya aprendida.</p>
+					<img src="/Assests/ConsultasI2.PNG" alt="" style="width: 400pt;">
 				</section>
-				
+					
 				<section>
-
+					<h1 style="font-size: 30pt;">SELECT … FROM tabla1 NATURAL JOIN tabla2 ;</h1>
+					<p style="font-size: 20pt;">Además, MySQL permite simplificar la expresión anterior usando NATURAL JOIN el
+						cual automáticamente busca los atributos de ambas tablas coincidentes.</p>
+					<img src="/Assests/ConsultasI3.PNG" alt="" style="width: 400pt;">
+					<p>
+						Hay que fijarse en que ahora solo aparece un campo “id” que unifica a los 2 “id” que hay en las tablas jugador y pichichi. Para poder realizar NATURAL JOIN, los campos a unificar han de llamarse igual.
+					</p>
 				</section>
-				
-				<section>
 
-				</section>
 <!---->					
-<!--Composiciones internas-->
+<!--Composiciones externas-->
 				<section>
 					<h1 style="font-size: 60pt; color: aqua;">Composiciones externas</h1>
 					<p style="font-size: 30pt;">Las Composiciones externas no se originan de un producto cartesiano sino que se
 						toma un registro de una tabla y se busca registros de otra tabla que coincidan en el atributo
 						indicado.</p>
 				</section>
-
+					
 				<section>
-
+					<h1 style="font-size: 30pt;">SELECT … FROM tabla1 LEFT JOIN tabla2 ON (tabla1.atributo =
+						tabla2.atributo) ;</h1>
+					<p style="font-size: 20pt;"> <strong style="color: aqua;">LEFT JOIN</strong> hace referencia a que la consulta se hará por cada una de los registros de la
+						primera tabla. Si un registro de la primera tabla no coincide con el campo común de
+						cualquier registro de la segunda tabla, se usará NULL para los campos que no puedan ser
+						rellenados.</p>
+					<img src="/Assests/ConsultasE2.PNG" alt="" style="width: 400pt;">
+				</section>
+					
+				<section>
+					<h1 style="font-size: 30pt;">SELECT … FROM tabla1 RIGHT JOIN tabla2 ON (tabla1.atributo =
+						tabla2.atributo) ;</h1>
+					<p style="font-size: 20pt;">Lo mismo ocurre con <strong style="color: aqua;">RIGHT JOIN</strong>, solo que en vez de crear el resultado recorriendo
+						cada uno de los registros de la primera tabla, se usará con los registros de la segunda.</p>
+					<img src="/Assests/ConsultasE1.PNG" alt="" style="width: 400pt;">
 				</section>
 				
 				<section>
-
+					<h1 style="font-size: 30pt;">SELECT … FROM tabla1 NATURAL LEFT JOIN tabla2 ;</h1>
+					<p style="font-size: 20pt;">Al igual que en las composiciones internas, con NATURAL JOIN nos podemos ahorrar la
+						necesidad de indicarle a MySQL qué campo en común tienen ambas tablas.
+						Por tanto, en el ejemplo, la última sentencia de MySQL usada podría substituirse por la
+						siguiente:</p>
+					<img src="/Assests/ConsultasE3.PNG" alt="" style="width: 400pt;">
 				</section>
 				
 				<section>
-
-				</section>
-				
-				<section>
-
+					<h1 style="font-size: 30pt;">SELECT … FROM tabla1 NATURAL RIGHT JOIN tabla2 ;</h1>
+					<p style="font-size: 20pt;">Lo mismo aplica para NATURAL LEFT JOIN, solo que en vez de la segunda tabla(RIGHT)
+						se formará la consulta a partir de la primera(LEFT)</p>
+					<img src="/Assests/ConsultasE4.PNG" alt="" style="width: 400pt;">
 				</section>
 <!---->
 				<section>
