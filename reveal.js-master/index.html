@@ -117,19 +117,46 @@
 					<img src="/Assests/LogoUPT.png" alt="" style="width: 200pt; margin-top: 0pt; padding-right: 800pt;">
 					<h1 style="font-size: 50pt;">subconsultas</h1>
 				</section>
+					<h1 style="font-size: 60pt; color: aqua;">¿Qué es una subconsulta?</h1>
+					<p style="font-size: 30pt;"> Es una consulta dentro de otra consulta (a esta segunda la llamamos la  principal).
+					Se suelen colocar en la cláusula WHERE de la consulta principal, 
+					pero también  pueden añadirse en el SELECT o en el FROM. </p>
 				
 				<section>
+					<h1 style="font-size: 60pt; color: aqua;">Clausula WHERE</h1>
+					<p style="font-size: 30pt;"> Para una subconsulta situada en la cláusula WHERE puede usarse 
+						los operadores de comparación (> , >=, <, <=, !=, =). 
+						Cuando esto ocurre se realiza una comparación entre el  valor indicado de la consulta principal 
+						y el valor resultante de la subconsulta. </p>
 
 				</section>
+					<h1 style="font-size: 60pt; color: aqua;">Comandos especiales: ANY</h1>
+					<p style="font-size: 30pt;">  Compara cada registro de la consulta principal con los de la subconsulta. 
+						Si la  comparación entre un registro de la consulta principal con otro de la subconsulta se valida, 
+						el registro de la principal pasará el filtro. </p>
+
 								
 				<section>
+					<h1 style="font-size: 60pt; color: aqua;">Comandos especiales: ALL</h1>
+					<p style="font-size: 30pt;">   en este caso un registro debe validarse para todos los registros de la subconsulta. </p>
 
 				</section>
+					<h1 style="font-size: 60pt; color: aqua;">Comandos especiales: IN y NOT IN</h1>
+					<p style="font-size: 30pt;">  En este caso no se usa el comparador. 
+						Se comprueba si cada registro de la consulta principal está 
+						o no contenido en la tabla resultante de la subconsulta, para NOT IN nos dice que solamente es el proceso
+						inverso de el IN es decir solamente es su opuesto.</p>
+						
 				
 				
 				<section>
+					<h1 style="font-size: 60pt; color: aqua;">EJEMPLOS</h1>
+					<p style="font-size: 30pt;">  <img src="Assests/Tablasubconsultas.png" style="width: 400" alt=""></p>
 
 				</section>
+					<h1 style="font-size: 60pt; color: aqua;">EJEMPLOS</h1>
+					<p style="font-size: 30pt;">  <img src="Assests/Tablasubconsultas2.png" style="width: 400" alt=""></p>
+
 				
 				
 				<section>
